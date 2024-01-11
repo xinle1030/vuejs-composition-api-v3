@@ -29,6 +29,7 @@ app.put<{}, {}, Post>("/posts", (req, res) => {
   res.json(allPosts[index]);
 });
 
+// third argument is the body which is Post type
 app.post<{}, {}, Post>("/posts", (req, res) => {
   const post = { ...req.body, id: (Math.random() * 100000).toFixed() };
   allPosts.push(post);

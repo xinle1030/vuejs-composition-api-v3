@@ -25,6 +25,7 @@ const modalStyle = computed(() => {
   <div class="section">
     <div class="container">
       <Navbar />
+      <!-- RouterView is to render the component based on which route we are in right now -->
       <RouterView />
     </div>
   </div>
@@ -33,8 +34,11 @@ const modalStyle = computed(() => {
 <style>
 /* use bulma css */
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+/* import for syntax highlight in PostWriter */
 @import "highlight.js/styles/atom-one-dark.css";
 
+/* html styling */
 ul {
   list-style: revert !important;
   list-style-position: inside !important;
