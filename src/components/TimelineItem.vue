@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { TimelinePost } from '../posts'
 
+// define props to be passed to timeline item
 defineProps<{
   post: TimelinePost
 }>()

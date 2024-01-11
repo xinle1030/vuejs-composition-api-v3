@@ -15,6 +15,7 @@ if (!post) {
   throw Error(`Post with id ${id} was not found`);
 }
 
+// use computed if we wan smt (a reactive property inside the function) to update and cause a re-render
 const canEdit = computed(() => {
   if (!usersStore.currentUserId) {
     return false;

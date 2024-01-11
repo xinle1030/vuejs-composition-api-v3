@@ -39,3 +39,10 @@ Modal
   <button class="modal-close is-large"></button>
 </div>
 ```
+
+## Set up and run project
+1. At project folder, run "npm i"
+2. In a new terminal, start backend server by running "npx ts-node src/server/index.ts" or "npm run server"
+  - backend run at http://localhost:8000
+3. In another terminal, start frontend by running "npm run dev"
+  - frontend run at http://localhost:3000

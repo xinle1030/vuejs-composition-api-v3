@@ -5,7 +5,7 @@ import App from './App.vue'
 import { useUsers } from './stores/users';
 import { usePosts } from './stores/posts';
 
-const app = createApp(App)
+const app = createApp(App) // create a new application passing in our root component
 app.use(createPinia())
 
 const usersStore = useUsers();
@@ -16,6 +16,6 @@ Promise.all([
   postsStore.fetchPosts()
 ]).then(() => {
   app.use(router)
-  app.mount('#app')
+  app.mount('#app') // mount it to the div with id = app in index.html
 })
 

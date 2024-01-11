@@ -9,8 +9,9 @@ export interface Post {
   html: string
 }
 
+// omit the created type of Post and overwrite it with a new type 
 export interface TimelinePost extends Omit<Post, 'created'> {
-  created: DateTime
+  created: DateTime // replace created with a different property type
 }
 
 export const today: Post = {

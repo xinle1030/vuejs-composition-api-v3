@@ -16,6 +16,9 @@ await postsStore.fetchPosts()
   </div>
   <nav class="is-primary panel">
     <span class="panel-tabs">
+      <!-- loop through periods to get period in a tag -->
+      <!-- usually v-for required :key binding  -->
+      <!-- pass period as an input argument to setSelectedPeriod() -->
       <a
         v-for="period of periods"
         :key="period"

@@ -19,7 +19,7 @@ const emit = defineEmits<{
 const title = ref(props.post.title);
 const content = ref(props.post.markdown);
 const html = ref("");
-const contentEditable = ref<HTMLDivElement>();
+const contentEditable = ref<HTMLDivElement>(); // pass in <type> to ref
 
 const posts = usePosts();
 const router = useRouter();
