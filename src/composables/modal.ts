@@ -3,7 +3,7 @@ import SignupForm from "../components/SignupForm.vue"
 import SigninForm from "../components/SigninForm.vue"
 
 const show = ref(false);
-const component = shallowRef();
+const component = shallowRef(); // useShallowRef for optimization due to nested components to have shallow watch
 
 export function useModal() {
   return {

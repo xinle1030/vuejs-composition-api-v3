@@ -6,10 +6,12 @@ import { validate, length, required } from '../validation'
 import { useUsers } from '../stores/users'
 import { useModal } from '../composables/modal';
 
+// optional error string from sign in form
 defineProps<{
   error?: string;
 }>();
 
+// emit event with the correct payload
 const emit = defineEmits<{
   (event: 'submit', payload: NewUser): void
 }>()
@@ -42,6 +44,7 @@ async function handleSubmit () {
   }
 
   try {
+    // emit event 'submit' with newUser payload for SigninForm and SignupForm to listen to 
     emit('submit', newUser)
   } catch (e) {}
 }

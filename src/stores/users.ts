@@ -11,6 +11,8 @@ export const useUsers = defineStore("users", {
   }),
 
   actions: {
+
+    // authenticate if the current user has signed in 
     async authenticate() {
       try {
         const res = await window.fetch("/api/current-user", {
@@ -32,6 +34,8 @@ export const useUsers = defineStore("users", {
           "Content-Type": "application/json",
         },
       });
+
+      // update cookie to ""
       return this.authenticate();
     },
 
@@ -44,6 +48,8 @@ export const useUsers = defineStore("users", {
         },
         body,
       });
+
+      // update cookie to new user id
       return this.authenticate();
     },
   },

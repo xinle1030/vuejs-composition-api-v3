@@ -14,5 +14,6 @@ async function handleSignup (newUser: NewUser) {
 </script>
 
 <template>
+    <!-- listen to and handle submit event emitted from UserForm  -->
   <UserForm @submit="handleSignup" />
 </template>

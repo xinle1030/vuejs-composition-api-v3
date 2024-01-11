@@ -29,5 +29,7 @@ async function handleSignin (newUser: NewUser) {
 </script>
 
 <template>
+  <!-- listen to and handle submit event emitted from UserForm  -->
+  <!-- pass error from sign in form to show on general user form using props -->
   <UserForm @submit="handleSignin" :error="error" />
 </template>

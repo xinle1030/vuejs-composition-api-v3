@@ -40,10 +40,13 @@ const SECRET = "my-secret";
 const COOKIE = "vuejs-jwt";
 
 function authenticate(id: string, req: Request, res: Response) {
+  // create a token and sign 
   const token = jsonwebtoken.sign({ id }, SECRET, {
     issuer: "vuejs-course",
     expiresIn: "30 days",
   });
+
+  // set the JWT token to a cookie
   res.cookie(COOKIE, token, { httpOnly: true });
 }
 
@@ -57,6 +60,7 @@ app.get("/current-user", (req, res) => {
   }
 });
 
+// update cookie to empty string, showing that the user has not authenticated => logout
 app.post("/logout", (req, res) => {
   res.cookie(COOKIE, "", { httpOnly: true });
   res.status(200).end();
