@@ -3,6 +3,7 @@ export interface Status {
   message?: string
 }
 
+// Rule: a function that complies to a specific interface, where input is String type and output is Status type
 type Rule = (value: string) => Status
 
 export function length ({ min, max }: { min: number, max: number }): Rule {
@@ -17,7 +18,7 @@ export function length ({ min, max }: { min: number, max: number }): Rule {
 }
 
 export const required: Rule = (value: string): Status => {
-  const result = Boolean(value)
+  const result = Boolean(value) // if empty string or undefined, return false; else true
 
   return {
     valid: result,

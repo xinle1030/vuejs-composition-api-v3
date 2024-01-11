@@ -7,10 +7,10 @@ const component = shallowRef();
 
 export function useModal() {
   return {
-    show,
+    show, // whether the modal is shown or not
     component,
     showModal: (type: 'signUp' | 'signIn') => {
-      show.value = true
+      show.value = true // update show.value to true when showing modal
       switch (type) {
         case 'signIn': return component.value = SigninForm
         case 'signUp': return component.value = SignupForm

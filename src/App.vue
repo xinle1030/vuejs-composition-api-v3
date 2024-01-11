@@ -6,6 +6,7 @@ import { useModal } from './composables/modal'
 const modal = useModal()
 
 const modalStyle = computed(() => {
+  // depending on modal.show.value, display modal or not
   return {
     display: modal.show.value ? 'block' : 'none'
   }
@@ -13,9 +14,11 @@ const modalStyle = computed(() => {
 </script>
 
 <template>
+  <!-- modal code-->
   <div class="modal" style="color: white;" :style="modalStyle">
     <div class="modal-background">
       <div class="modal-content">
+        <!-- div with id = modal to be teleported here -->
         <div id="modal"></div>
       </div>
     </div>

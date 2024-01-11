@@ -48,6 +48,7 @@ async function handleSubmit () {
 </script>
 
 <template>
+  <!-- prevent default behaviour of reloading the page when posting a request using .prevent -->
   <form class="form" @submit.prevent="handleSubmit">
     <FormInput name="Username" v-model="username" :status="usernameStatus" type="text" />
     <FormInput name="Password" v-model="password" :status="passwordStatus" type="password" />

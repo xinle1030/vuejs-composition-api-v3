@@ -73,12 +73,13 @@ app.post<{}, {}, NewUser>("/login", (req, res) => {
   }
 });
 
+// create new users
 app.post<{}, {}, NewUser>("/users", (req, res) => {
   const user: User = { ...req.body, id: (Math.random() * 100000).toFixed() };
   allUsers.push(user);
   authenticate(user.id, req, res);
-  const { password, ...rest } = user;
-  res.json(rest);
+  const { password, ...rest } = user; // grab all properties of user except password
+  res.json(rest); // return rest of data about user without password
 });
 
 async function start() {

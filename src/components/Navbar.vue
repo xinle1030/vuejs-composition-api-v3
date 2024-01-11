@@ -30,6 +30,7 @@ async function logout () {
     </div>
   </div>
 
+  <!-- teleport modal to the div with id = modal -->
   <Teleport to="#modal">
     <component :is="modal.component.value" />
   </Teleport>
